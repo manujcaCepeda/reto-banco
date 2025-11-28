@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+/* variables */
+:root {
+  --color-yellow: #ffd900;
+  --color-yellow-dark: #e6c200;
+  --color-blue: #007bff;
+  --color-blue-dark: #0069d9;
+  --color-red: #dc3545;
+  --color-red-dark: #c82333;
+  --color-gray: #6c757d;
+  --border: #dcdcdc;
+  --radius: 6px;
+  --max-width: 1100px;
+}
+
+/* global resets */
+* { box-sizing: border-box; }
+body { font-family: Inter, Roboto, Arial, sans-serif; margin: 0; background: #f7f9fc; color: #222; }
+
+/* layout helpers */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 20px; }
+
+/* buttons shared */
+.btn {
+  border: none; padding: 8px 14px; border-radius: var(--radius); cursor: pointer;
+  margin-right: 5px;
+}
+.btn-yellow { background: var(--color-yellow); color: #000; }
+.btn-yellow:hover { background: var(--color-yellow-dark); }
+.btn-blue { background: var(--color-blue); color: #fff; }
+.btn-blue:hover { background: var(--color-blue-dark); }
+.btn-red { background: var(--color-red); color: #fff; }
+.btn-red:hover { background: var(--color-red-dark); }
+.btn-gray { background: #e9ecef; color: #000; }
+.btn-small { padding: 6px 10px; font-size: 13px; }
+
+/* form shared */
+.form-card { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.label { display:block; font-weight:600; margin-bottom:6px; }
+.input, select { width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; }
+
+/* table shared */
+.table { width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; }
+.table th { background:#f4f6f8; padding:12px; text-align:left; font-weight:600; }
+.table td { padding:12px; border-bottom:1px solid #f0f0f0; }
+
+/* messages */
+.info { color:#555; padding:10px 0; }
+.error { color: var(--color-red); padding:8px 0; }
+
+/* header layout */
+.app-header { background:#fff; border-bottom:1px solid #eee; padding:10px 20px; }
+.app-header .nav { display:flex; gap:12px; align-items:center; }
+.app-title { font-weight:700; margin-right:auto; }

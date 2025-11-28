@@ -1,0 +1,35 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-title">
+      <span>Menú</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a routerLink="/clientes" routerLinkActive="active">Clientes</a></li>
+        <li><a routerLink="/cuentas" routerLinkActive="active">Cuentas</a></li>
+        <li><a routerLink="/movimientos" routerLinkActive="active">Movimientos</a></li>
+        <li><a routerLink="/reportes" routerLinkActive="active">Reportes</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido -->
+  <main class="content">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-logo">
+        <img src="assets/logo.svg" alt="Logo" />
+        <h1>BANCO</h1>
+      </div>
+    </header>
+
+    <section class="screen">
+      <router-outlet></router-outlet>
+    </section>
+
+  </main>
+</div>

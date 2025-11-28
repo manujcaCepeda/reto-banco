@@ -1,0 +1,44 @@
+<div class="page">
+
+  <div class="page-header" style="display:flex; align-items:center;">
+    <h2>Cuentas</h2>
+    
+  </div>
+
+  <div style="display:flex; justify-content:space-between; gap:24px; margin:12px 0; align-items:center;">
+    <input class="input" [(ngModel)]="search" (ngModelChange)="applyFilter()" placeholder="Buscar..." />
+    <button class="btn btn-yellow" (click)="crear()">Nuevo</button>
+  </div>
+
+  <div *ngIf="loading" class="info">Cargando cuentas...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <table class="table" *ngIf="!loading && filtered.length">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Número Cuenta</th>
+        <th>Tipo</th>
+        <th>Saldo Inicial</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of filtered">
+        <td>{{ c.clienteNombre || '...' }}</td>
+        <td>{{ c.numeroCuenta }}</td>
+        <td>{{ c.tipoCuenta }}</td>
+        <td>{{ c.saldoInicial }}</td>
+        <td>
+          <button class="btn btn-small btn-blue" (click)="editar(c.id)">Editar</button>
+          <button class="btn btn-small btn-red" (click)="eliminar(c.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && !filtered.length && !errorMessage" class="info">
+    No hay cuentas registradas.
+  </div>
+</div>

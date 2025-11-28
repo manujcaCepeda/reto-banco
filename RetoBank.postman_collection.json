@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "b5bdb3a2-83b9-47a7-9e5c-d42113345ad1",
+		"name": "RetoBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37875681"
+	},
+	"item": [
+		{
+			"name": "POST Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Juan Perez\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"edad\": 30,\r\n  \"identificacion\": \"1234567890\",\r\n  \"direccion\": \"Av. Siempre Viva 123\",\r\n  \"telefono\": \"0987654321\",\r\n  \"clienteId\": \"JP001\",\r\n  \"password\": \"123456\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cliente ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/a9ce87bb-60e7-408e-9217-ca6c55061dfb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"a9ce87bb-60e7-408e-9217-ca6c55061dfb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Cliente ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Juan P. Actualizado\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"edad\": 31,\r\n  \"identificacion\": \"1234567890\",\r\n  \"direccion\": \"Nueva dirección\",\r\n  \"telefono\": \"0981122334\",\r\n  \"clienteId\": \"JP001\",\r\n  \"password\": \"654321\",\r\n  \"estado\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/a9ce87bb-60e7-408e-9217-ca6c55061dfb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"a9ce87bb-60e7-408e-9217-ca6c55061dfb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Cliente ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clientes/a9ce87bb-60e7-408e-9217-ca6c55061dfb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"a9ce87bb-60e7-408e-9217-ca6c55061dfb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": \"598c1c15-07f5-42d7-a39c-090d96251b66\",\r\n  \"numeroCuenta\": \"4589658741\",\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldoInicial\": 1000,\r\n  \"estado\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cuenta ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas/dc04398c-618e-41a0-a572-0c72ccd55540",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas",
+						"dc04398c-618e-41a0-a572-0c72ccd55540"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Cuenta ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": \"598c1c15-07f5-42d7-a39c-090d96251b66\",\r\n  \"numeroCuenta\": \"4589658741\",\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldoInicial\": 1200,\r\n  \"estado\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas/dc04398c-618e-41a0-a572-0c72ccd55540",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas",
+						"dc04398c-618e-41a0-a572-0c72ccd55540"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cuenta Por Cliente ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas/cliente/598c1c15-07f5-42d7-a39c-090d96251b66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas",
+						"cliente",
+						"598c1c15-07f5-42d7-a39c-090d96251b66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Movimiento Retiro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": \"dc04398c-618e-41a0-a572-0c72ccd55540\",\r\n  \"tipoMovimiento\": \"RETIRO\",\r\n  \"valor\": 200.50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Movimiento Deposito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuentaId\": \"dc04398c-618e-41a0-a572-0c72ccd55540\",\r\n    \"tipoMovimiento\": \"DEPOSITO\",\r\n    \"valor\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Movimientos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Movimiento Cuenta ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos/cuenta/dc04398c-618e-41a0-a572-0c72ccd55540",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos",
+						"cuenta",
+						"dc04398c-618e-41a0-a572-0c72ccd55540"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento Cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos/reporte/dc04398c-618e-41a0-a572-0c72ccd55540?desde=2024-01-01&hasta=2026-12-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos",
+						"reporte",
+						"dc04398c-618e-41a0-a572-0c72ccd55540"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "hasta",
+							"value": "2026-12-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reporte Movimiento Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/reportes?clienteId=a9ce87bb-60e7-408e-9217-ca6c55061dfb&desde=2024-01-01&hasta=2025-12-31\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "clienteId",
+							"value": "a9ce87bb-60e7-408e-9217-ca6c55061dfb"
+						},
+						{
+							"key": "desde",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "hasta",
+							"value": "2025-12-31\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

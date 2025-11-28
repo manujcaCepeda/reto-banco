@@ -1,28 +1,119 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
+###############################
+# 🟦 1. BACKEND – SPRING BOOT #
+###############################
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
-
-# Environment files
-/.env
-
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
-
-# TypeScript cache
-*.tsbuildinfo
+# Maven target/
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
+*.log.*
+logs/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+.apt_generated/
+.factorypath
+
+# STS
+.springBeans
+.sts4-cache/
+
+# VSCode
+.vscode/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+###############################
+# 🟩 2. FRONTEND – ANGULAR    #
+###############################
+
+# Angular compiled output
+dist/
+dist*/
+out-tsc/
+
+# Angular cache
+.angular/
+.angular/cache/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment files (subir solo si deseas)
+*.env
+*.local
+
+# Build and temp files
+.tmp/
+temp/
+*.temp
+*.swp
+
+# Coverage
+coverage/
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+###################################
+# 🟧 3. DOCKER & OTROS ARCHIVOS   #
+###################################
+
+# Docker
+*.pid
+*.seed
+docker-data/
+docker-compose.override.yml
+
+# Misc
+*.bak
+*.old
+*.tmp
+
+#######################
+# 4. SECURITY         #
+#######################
+
+# Keys / secrets (no subir nunca)
+*.key
+*.pem
+*.crt
+secret.json
+
+.env
+.env.*
+!.env.example

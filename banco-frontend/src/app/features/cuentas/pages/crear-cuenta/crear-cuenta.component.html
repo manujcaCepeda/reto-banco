@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Nueva Cuenta</h2>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+
+    <div class="form-row">
+      <label>Cliente</label>
+      <select formControlName="clienteId">
+        <option value="">Seleccione...</option>
+        <option *ngFor="let c of clientes" [value]="c.id">{{ c.nombre }}</option>
+      </select>
+      <div class="error" *ngIf="form.get('clienteId')?.touched && form.get('clienteId')?.invalid">
+        Seleccione un cliente.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Número de Cuenta</label>
+      <input formControlName="numeroCuenta" />
+      <div class="error" *ngIf="form.get('numeroCuenta')?.touched && form.get('numeroCuenta')?.invalid">
+        Número obligatorio.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Tipo de Cuenta</label>
+      <select formControlName="tipoCuenta">
+        <option value="">Seleccione...</option>
+        <option value="AHORRO">Ahorro</option>
+        <option value="CORRIENTE">Corriente</option>
+      </select>
+      <div class="error" *ngIf="form.get('tipoCuenta')?.touched && form.get('tipoCuenta')?.invalid">
+        Seleccione un tipo.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Saldo Inicial</label>
+      <input type="number" formControlName="saldoInicial" />
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-yellow" type="submit" [disabled]="submitting">Guardar</button>
+      <button class="btn btn-gray" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+
+  </form>
+</div>

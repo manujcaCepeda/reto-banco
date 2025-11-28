@@ -1,0 +1,57 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Registrar Movimiento</h2>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+  <!-- Autocomplete cliente -->
+  <div style="margin:12px 0; position:relative; max-width:640px;">
+    <input class="input"
+           placeholder="Buscar cliente por nombre o identificación..."
+           [value]="clienteSearch"
+           (input)="onClienteInput($any($event.target).value)"
+           (focus)="onClienteInput(clienteSearch)"
+           autocomplete="off" />
+    <button *ngIf="clienteSeleccionado" class="btn btn-gray" style="position:absolute; right:0; top:0; height:38px;" (click)="clearClienteSelection()">Limpiar</button>
+
+    <ul *ngIf="clientesMatches?.length" class="autocomplete-list">
+      <li *ngFor="let c of clientesMatches" (click)="seleccionarCliente(c)">
+        <strong>{{ c.nombre }}</strong> — <small>{{ c.identificacion }}</small>
+      </li>
+    </ul>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+    <div class="form-row">
+      <label>Cuenta</label>
+      <select formControlName="cuentaId">
+        <option value="">Seleccione...</option>
+        <option *ngFor="let c of cuentasCliente" [value]="c.id">{{ c.numeroCuenta }} — {{ c.tipoCuenta }}</option>
+      </select>
+      <div class="error" *ngIf="form.get('cuentaId')?.touched && form.get('cuentaId')?.invalid">Seleccione una cuenta.</div>
+    </div>
+
+    <div class="form-row">
+      <label>Tipo</label>
+      <select formControlName="tipoMovimiento">
+        <option value="">Seleccione...</option>
+        <option value="RETIRO">Retiro</option>
+        <option value="DEPOSITO">Depósito</option>
+      </select>
+      <div class="error" *ngIf="form.get('tipoMovimiento')?.touched && form.get('tipoMovimiento')?.invalid">Seleccione un tipo.</div>
+    </div>
+
+    <div class="form-row">
+      <label>Valor</label>
+      <input type="number" formControlName="valor" />
+      <div class="error" *ngIf="form.get('valor')?.touched && form.get('valor')?.invalid">Valor inválido.</div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-yellow" type="submit" [disabled]="submitting">Guardar</button>
+      <button class="btn btn-gray" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>

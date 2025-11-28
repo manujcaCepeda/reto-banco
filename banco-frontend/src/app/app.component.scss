@@ -1,0 +1,110 @@
+/* --- LAYOUT GENERAL --- */
+.layout {
+  display: flex;
+  height: 100vh;
+  background: #f6f8fa;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 230px;
+  background: #ffffff;
+  border-right: 1px solid #e1e5eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c3b57;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+/* Navegación */
+.sidebar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+/* Hover elegante */
+.sidebar nav ul li a:hover {
+  background: #edf2ff;
+  color: #2c5282;
+}
+
+/* Active */
+.sidebar nav ul li a.active {
+  background: #dce7ff;
+  color: #1e3a8a;
+  font-weight: 600;
+  border-left: 4px solid #1e3a8a;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  height: 70px;
+  border-bottom: 1px solid #e1e5eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* LOGO Y TÍTULO */
+.header-logo {
+  display: flex;
+  align-items: center;    
+  justify-content: flex-start;
+  gap: 12px;
+  height: 100%;
+}
+
+.header-logo img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.header-logo h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f1b33;
+  margin: 0;
+  line-height: 1;        
+  padding-top: 2px;       
+}
+
+
+/* --- CONTENIDO PANTALLA --- */
+.screen {
+  padding: 30px 50px;
+  height: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,71 @@
+
+.page-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cuenta-card {
+  margin-top: 25px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.resume p {
+  margin: 4px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th, .table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.download {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.error {
+  color: #b00020;
+  margin-bottom: 10px;
+}
+
+.info {
+  text-align: center;
+  margin: 10px 0;
+}

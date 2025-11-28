@@ -1,0 +1,84 @@
+<div class="page">
+
+  <div class="page-header">
+    <h2>Reporte General</h2>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- ====== FILTROS ====== -->
+  <div class="filters">
+    <div class="form-row">
+      <label>Cliente</label>
+      <select [(ngModel)]="clienteId">
+        <option value="">Seleccione...</option>
+        <option *ngFor="let c of clientes" [value]="c.id">
+          {{ c.nombre }} ({{ c.identificacion }})
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Desde</label>
+      <input type="date" [(ngModel)]="desde">
+    </div>
+
+    <div class="form-row">
+      <label>Hasta</label>
+      <input type="date" [(ngModel)]="hasta">
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-yellow" (click)="consultar()">Consultar</button>
+      <button class="btn btn-gray" (click)="limpiar()">Limpiar</button>
+    </div>
+  </div>
+
+  <!-- ====== LOADING ====== -->
+  <div *ngIf="loading" class="info">Generando reporte...</div>
+
+  <!-- ====== REPORTE ====== -->
+  <div *ngIf="reporte">
+
+    <h3>Cliente: {{ reporte.cliente }}</h3>
+    <p>Identificación: <strong>{{ reporte.identificacion }}</strong></p>
+    <p>Periodo: {{ reporte.desde }} → {{ reporte.hasta }}</p>
+
+    <!-- Cada cuenta -->
+    <div class="cuenta-card" *ngFor="let c of reporte.cuentas">
+
+      <h3>Cuenta {{ c.numeroCuenta }} ({{ c.tipoCuenta }})</h3>
+
+      <div class="resume">
+        <p>Saldo inicial: <strong>{{ c.saldoInicial }}</strong></p>
+        <p>Saldo disponible: <strong>{{ c.saldoDisponible }}</strong></p>
+        <!-- <p>Total débitos: <strong>{{ c.totalDebitos }}</strong></p>
+        <p>Total créditos: <strong>{{ c.totalCreditos }}</strong></p> -->
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of c.movimientos">
+            <td>{{ m.fecha | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{ m.tipo }}</td>
+            <td>{{ m.valor }}</td>
+            <td>{{ m.saldo }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="download">
+      <button class="btn btn-yellow" (click)="descargarPDF()">Descargar PDF</button>
+    </div>
+  </div>
+</div>
