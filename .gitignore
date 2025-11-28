@@ -65,10 +65,6 @@ yarn-error.log
 package-lock.json
 yarn.lock
 
-# Environment files (subir solo si deseas)
-*.env
-*.local
-
 # Build and temp files
 .tmp/
 temp/
@@ -113,7 +109,3 @@ docker-compose.override.yml
 *.pem
 *.crt
 secret.json
-
-.env
-.env.*
-!.env.example
