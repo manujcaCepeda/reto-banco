@@ -14,7 +14,7 @@ Este repositorio contiene la solucion completa al reto tecnico
 
 ------------------------------------------------------------------------
 
-## ğŸ“Œ 1. Arquitectura General
+## 1. Arquitectura General
 
 La solucion esta dividida en dos proyectos:
 
@@ -26,7 +26,7 @@ Docker usando `docker-compose`.
 
 ------------------------------------------------------------------------
 
-## ğŸ§± 2. Backend -- Spring Boot
+## 2. Backend -- Spring Boot
 
 ### Tecnologias usadas
 
@@ -77,25 +77,7 @@ Docker usando `docker-compose`.
 
 ------------------------------------------------------------------------
 
-## ğŸ§ª 3. Pruebas Unitarias
-
-### Backend
-
--   Pruebas con JUnit5 y Mockito\
--   Se incluyen al menos **dos pruebas de endpoints**, como pide el reto
-
-### Frontend
-
--   Pruebas realizadas con **Jest**\
--   Se validan:
-    -   carga de datos\
-    -   errores\
-    -   envio de formularios\
-    -   uso de servicios mock
-
-------------------------------------------------------------------------
-
-## ğŸ–¥ï¸?4. Frontend -- Angular
+## 3. Frontend -- Angular
 
 ### Tecnologias
 
@@ -116,7 +98,25 @@ Docker usando `docker-compose`.
 
 ------------------------------------------------------------------------
 
-## ğŸ—„ï¸?5. BaseDatos.sql
+## 4. Pruebas Unitarias
+
+### Backend
+
+-   Pruebas con JUnit5 y Mockito\
+-   Se incluyen al menos **dos pruebas de endpoints**, como pide el reto
+
+### Frontend
+
+-   Pruebas realizadas con **Jest**\
+-   Se validan:
+    -   carga de datos\
+    -   errores\
+    -   envio de formularios\
+    -   uso de servicios mock
+
+------------------------------------------------------------------------
+
+## 5. BaseDatos.sql
 
 Incluye:
 
@@ -128,7 +128,7 @@ Incluye:
 
 ------------------------------------------------------------------------
 
-## ğŸ³ 6. Despliegue con Docker
+## 6. Despliegue con Docker
 
 ### 6.1 Ejecutar backend en Docker
 
@@ -148,6 +148,7 @@ Dentro de `/banco-frontend`:
 
 Desde la raiz del repo:
 
+	docker compose build
     docker compose up -d
 
 Containers levantados:
@@ -158,7 +159,7 @@ Containers levantados:
 
 ------------------------------------------------------------------------
 
-## ğŸ§ª 7. Postman
+## 7. Postman
 
 Se incluye:
 
@@ -167,7 +168,7 @@ Se incluye:
 
 ------------------------------------------------------------------------
 
-## ğŸ§¾ 8. Como probar
+## 8. Como probar
 
 ### Backend
 
@@ -190,21 +191,21 @@ Se incluye:
 
 ------------------------------------------------------------------------
 
-## ğŸ“¬ 9. Entregables solicitados
+## 9. Entregables solicitados
 
-âœ?Backend completo\
-âœ?Frontend completo\
-âœ?BaseDatos.sql\
-âœ?Dockerfile backend\
-âœ?Dockerfile frontend\
-âœ?docker-compose.yml\
-âœ?Pruebas backend\
-âœ?Pruebas frontend\
-âœ?Postman\
-âœ?README
+-   Backend completo\
+-   Frontend completo\
+-   BaseDatos.sql\
+-   Dockerfile backend\
+-   Dockerfile frontend\
+-   docker-compose.yml\
+-   Pruebas backend\
+-   Pruebas frontend\
+-   Postman\
+-   README
 
 ------------------------------------------------------------------------
 
-## ğŸ‘¨â€ğŸ’?Autor
+## ?Autor
 
 Ejecutado por: **Manuel Cepeda**
